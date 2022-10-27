@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: person
+          uri: http://localhost:8082/api/v1/personenList
+          predicates:
+            - Path=/api/v1/**
+  application:
+    name: GateApplication
+server:
+  port: 8080
